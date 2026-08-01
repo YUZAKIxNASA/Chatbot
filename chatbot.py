@@ -102,7 +102,7 @@ def main():
 
     clear_screen()
     print("=" * 70)
-    print("Hello Everyone It Me Your NLP Chatbot I am Created By Shahzaib Malik ")
+    print("Hello Everyone It Me Your NLP Chatbot I am Created By yuzaki_x_nasa")
     print("Type your question below. Type 'clear' to clear screen. Type 'bye' to exit.")
     print("=" * 70)
 
