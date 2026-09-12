@@ -1,0 +1,21 @@
+Python is a high-level general-purpose programming language.
+Python was created by Guido van Rossum and first released in 1991.
+Python supports procedural, object-oriented, and functional programming.
+Programming is the process of writing instructions that a computer can execute.
+Natural Language Processing, or NLP, helps computers work with human language.
+Common NLP tasks include tokenization, stemming, lemmatization, part-of-speech tagging, and named entity recognition.
+Artificial intelligence is the broader field of building systems that perform tasks associated with human intelligence.
+Machine learning is a subset of artificial intelligence that learns patterns from data.
+Deep learning is a subset of machine learning based on neural networks with many layers.
+A chatbot is software that conducts a conversation with a person using text or speech.
+TF-IDF stands for term frequency-inverse document frequency and estimates how important a word is to a document collection.
+Cosine similarity compares the angle between two vectors and is useful for measuring text similarity.
+Tokenization splits text into smaller units such as words or punctuation marks.
+Lemmatization reduces related words to a dictionary base form.
+Computer science studies computation, algorithms, data, and computer systems.
+Web development creates websites and web applications.
+JavaScript is a programming language commonly used to add behavior to web pages.
+HTML provides the structure and meaning of content on a web page.
+CSS describes the presentation and layout of web pages.
+Git is a distributed version control system for tracking changes in files.
+GitHub is a platform for hosting Git repositories and collaborating on software.

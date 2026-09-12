@@ -1,0 +1,9 @@
+{
+  "fallback": [
+    "I do not know that yet. Try asking about Python, NLP, or chatbots.",
+    "I could not find a confident match. Try rephrasing your question."
+  ],
+  "thanks": ["You are welcome!"],
+  "empty": "Please enter a question, or type 'help' for commands.",
+  "error": "I ran into a problem while searching my knowledge base."
+}
