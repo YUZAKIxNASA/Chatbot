@@ -9,6 +9,7 @@ Chatbot is a beginner-friendly local NLP project. It uses NLTK preprocessing and
 - TF-IDF and cosine-similarity knowledge matching
 - Configurable confidence threshold and fallback responses
 - Local session history with `history` and `reset`
+- Local JSON persistence helpers for saving lightweight bot state or data files
 - `help`, `clear`, `status`, and `exit` terminal commands
 - Small unittest suite and portable launch scripts
 
@@ -25,6 +26,7 @@ Chatbot/
 ├── main.py
 ├── chatbot.py              # compatibility launcher
 ├── config.py
+├── file_storage.py         # local JSON load/save helpers
 ├── requirements.txt
 ├── data/
 │   ├── knowledge.txt
@@ -94,6 +96,8 @@ On Linux/macOS, `./run.sh` checks Python and imports before starting. On Windows
 `chatbot/nlp.py` normalizes text, tokenizes it, and lemmatizes tokens. NLTK data is used when available; missing resources fall back to regular-expression tokenization and original tokens, so importing the project does not attempt a network download.
 
 The knowledge loader reads facts from `data/knowledge.txt`. At startup, scikit-learn builds a TF-IDF matrix for those facts. TF-IDF gives higher weight to terms that matter in a document and lower weight to common terms. A user question is transformed using the same vocabulary, then cosine similarity compares its vector with each knowledge vector. The highest score is returned only when it reaches `MIN_CONFIDENCE` in `config.py`; otherwise a configurable fallback is used.
+
+For simple local persistence, `file_storage.py` adds JSON helpers that return a default value when a file is missing and write data atomically by staging a temporary file before replacing the original. This keeps lightweight saved state or cached responses easy to manage without a database.
 
 ## Extend The Chatbot
 
