@@ -5,6 +5,8 @@ import random
 from pathlib import Path
 from typing import Any, Dict
 
+from .models import SearchResult
+
 
 DEFAULT_RESPONSES: Dict[str, Any] = {
     "fallback": [
@@ -42,3 +44,28 @@ class ResponseCatalog:
 
     def error(self) -> str:
         return self.data["error"]
+
+
+class ConfidenceManager:
+    """Apply the configured retrieval threshold to a similarity score."""
+
+    def __init__(self, threshold: float):
+        self.threshold = threshold
+
+    def accepts(self, score: float) -> bool:
+        return score >= self.threshold
+
+
+class ResponseGenerator:
+    """Turn an action result into user-facing text without inventing facts."""
+
+    def __init__(self, catalog: ResponseCatalog, confidence: ConfidenceManager):
+        self.catalog = catalog
+        self.confidence = confidence
+
+    def generate(self, intent, context, result) -> str:
+        if isinstance(result, SearchResult):
+            if result.entry is None or not self.confidence.accepts(result.score):
+                return self.catalog.random_fallback()
+            return result.entry.answer
+        return str(result)
